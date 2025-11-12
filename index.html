@@ -85,6 +85,24 @@
         </nav>
     </header>
 
+    <!-- JavaScript para el Menú Móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            
+            // Función para alternar la visualización del menú
+            const toggleMenu = () => {
+                menu.classList.toggle('hidden');
+            };
+
+            // Adjuntar oyente de eventos al botón
+            if (button && menu) {
+                button.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
+
     <!-- Sección Principal (Hero) - Adaptado a Calma y Naturaleza --><section class="hero-section py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
             

@@ -68,6 +68,24 @@
         </nav>
     </header>
 
+    <!-- JavaScript para el Menú Móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            
+            // Función para alternar la visualización del menú
+            const toggleMenu = () => {
+                menu.classList.toggle('hidden');
+            };
+
+            // Adjuntar oyente de eventos al botón
+            if (button && menu) {
+                button.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
+
     <!-- Sección de Introducción/Hero de Beneficios -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
 
