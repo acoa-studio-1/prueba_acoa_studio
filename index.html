@@ -10,9 +10,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'neutral-light': '#FAF9F6', // Un blanco muy suave, casi crema
-                        'verde-claro': '#A8D5BA', // Un marrón oscuro para texto y acentos
-                        'gris-oscuro': '#2F4F4F', // Color de acento cálido, como el vidrio ámbar
+                        'neutral-light': '#FAF9F6', // Un blanco muy suave, casi crema (Fondo principal)
+                        'earthy-dark': '#443322', // Un marrón oscuro para texto y acentos (Texto principal)
+                        'accent-green': '#5F857B', // NUEVO Verde Suave/Menta para acentos, botones y highlights
+                        'accent-green-dark': '#48635B', // Variante oscura para hover
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -37,28 +38,28 @@
         }
     </style>
 </head>
-<body class="font-sans text-verde-claro bg-neutral-light">
+<body class="font-sans text-earthy-dark bg-neutral-light">
 
     <!-- Barra de Navegación (Header) --><header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <!-- Logo/Nombre de la Marca (Limpio y legible) -->
-            <div class="text-2xl font-semibold tracking-wider text-gris-oscuro">
+            <div class="text-2xl font-semibold tracking-wider text-accent-green">
                 ACOA STUDIO
             </div>
 
             <!-- Navegación Principal --><nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-sm font-medium hover:text-gris-oscuro transition duration-150">Colección</a>
-                <a href="#" class="text-sm font-medium hover:text-gris-oscuro transition duration-150">Cera de Soja</a>
-                <a href="#" class="text-sm font-medium hover:text-gris-oscuro transition duration-150">Packs Regalo</a>
-                <a href="#" class="text-sm font-medium hover:text-gris-oscuro transition duration-150">Nosotros</a>
-                <a href="#" class="text-sm font-medium hover:text-gris-oscuro transition duration-150">Blog & Cuidado</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Colección</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Cera de Soja</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Packs Regalo</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Nosotros</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Blog & Cuidado</a>
             </nav>
 
             <!-- Íconos de Usuario y Carrito (Símbolos para un e-commerce) --><div class="flex items-center space-x-4">
-                <a href="#" class="text-lg hover:text-gris-oscuro transition duration-150" aria-label="Cuenta">
+                <a href="#" class="text-lg hover:text-accent-green transition duration-150" aria-label="Cuenta">
                     <!-- Icono de Usuario (SVG Lucide) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </a>
-                <a href="#" class="text-lg hover:text-gris-oscuro transition duration-150" aria-label="Carrito de compra">
+                <a href="#" class="text-lg hover:text-accent-green transition duration-150" aria-label="Carrito de compra">
                     <!-- Icono de Carrito (SVG Lucide) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                 </a>
             </div>
@@ -69,22 +70,22 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
             
             <!-- Columna de Texto y CTA (Enfoque en Bienestar y Calidad Artesanal) --><div class="order-2 md:order-1">
-                <!-- Tono íntimo y personal, alineado con el bienestar --><p class="text-sm uppercase tracking-widest text-gris-oscuro mb-2">
+                <!-- Tono íntimo y personal, alineado con el bienestar --><p class="text-sm uppercase tracking-widest text-accent-green mb-2">
                     Lujo Consciente y Natural
                 </p>
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-verde-claro">
-                    Crea tu <span class="text-gris-oscuro">Atmósfera</span> de Calma.
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-earthy-dark">
+                    Crea tu <span class="text-accent-green">Atmósfera</span> de Calma.
                 </h1>
                 
                 <!-- Disparadores: Salud (No Tóxicas) y Sostenibilidad --><p class="text-lg text-stone-600 mb-8 max-w-lg">
                     Velas 100% de cera de soja, hechas a mano con mechas de algodón y esencias naturales. Sin toxinas, veganas y con un compromiso real por tu salud y la del planeta.
                 </p>
                 
-                <!-- CTA (Ligeramente redondeado, color tierra) --><div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="cta-button inline-block px-8 py-3 text-lg font-semibold text-white bg-gris-oscuro rounded-xl shadow-lg hover:bg-amber-900 transition duration-300 ease-in-out text-center">
+                <!-- CTA (Ligeramente redondeado, color verde suave) --><div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="cta-button inline-block px-8 py-3 text-lg font-semibold text-white bg-accent-green rounded-xl shadow-lg hover:bg-accent-green-dark transition duration-300 ease-in-out text-center">
                         Descubre la Colección
                     </a>
-                    <a href="#" class="inline-block px-8 py-3 text-lg font-semibold text-verde-claro border border-verde-claro rounded-xl hover:bg-stone-200 transition duration-300 ease-in-out text-center">
+                    <a href="#" class="inline-block px-8 py-3 text-lg font-semibold text-earthy-dark border border-earthy-dark rounded-xl hover:bg-stone-200 transition duration-300 ease-in-out text-center">
                         ¿Por Qué Soja? (Aprende)
                     </a>
                 </div>
@@ -95,12 +96,12 @@
             </div>
             
             <!-- Columna de Imagen (Reemplaza la ilustración plana por una foto de alta calidad) --><div class="order-1 md:order-2 flex justify-center md:justify-end">
-                <!-- Imagen Placeholder de la Vela (simulando un frasco ámbar con luz cálida) --><div class="w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <!-- Imagen Placeholder de la Vela (simulando un frasco en tono verde suave) --><div class="w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
                     <img 
-                        src="https://placehold.co/800x800/9A6324/FFF?text=Vela+de+Soja+Artesanal" 
+                        src="https://placehold.co/800x800/5F857B/FFF?text=Vela+de+Soja+Artesanal" 
                         alt="Primer plano de una vela de cera de soja en un frasco de vidrio ámbar encendida." 
                         class="w-full h-full object-cover"
-                        onerror="this.onerror=null; this.src='https://placehold.co/800x800/9A6324/FFF?text=Vela+de+Soja+Artesanal';"
+                        onerror="this.onerror=null; this.src='https://placehold.co/800x800/5F857B/FFF?text=Vela+de+Soja+Artesanal';"
                     >
                 </div>
             </div>
@@ -110,7 +111,7 @@
 
     <!-- Sección de Contenido (Ejemplo de un eslogan o producto secundario) --><section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-3 text-verde-claro">
+            <h2 class="text-3xl font-bold mb-3 text-earthy-dark">
                 "Hechas con Cariño para tu Ritual Diario"
             </h2>
             <p class="text-lg text-stone-600">
