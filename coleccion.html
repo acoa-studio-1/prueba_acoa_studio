@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acoa Studio - Colección de Velas</title>
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración para usar la fuente Inter y colores personalizados (MISMOS COLORES QUE EL DISEÑO PRINCIPAL) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neutral-light': '#FAF9F6', // Fondo principal (Casi crema)
+                        'earthy-dark': '#443322', // Texto principal (Marrón oscuro)
+                        'accent-green': '#5F857B', // Verde Suave/Menta para acentos
+                        'accent-green-dark': '#48635B', // Variante oscura para hover
+                        'card-white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos generales para el fondo */
+        .collection-page-bg {
+            background-color: #FAF9F6; /* neutral-light */
+        }
+        /* Estilos para el efecto de hover en las tarjetas de producto */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(95, 133, 123, 0.15); /* Sombra sutil con color de acento */
+        }
+        /* Estilo para los botones de filtro, limpios y discretos */
+        .filter-button {
+            transition: background-color 0.15s, color 0.15s;
+        }
+    </style>
+</head>
+<body class="font-sans text-earthy-dark collection-page-bg">
+
+    <!-- Barra de Navegación (Header) - Mantenemos el diseño consistente --><header class="bg-card-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Logo/Nombre de la Marca -->
+            <div class="text-2xl font-semibold tracking-wider text-accent-green">
+                ACOA STUDIO
+            </div>
+
+            <!-- Navegación Principal --><nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-sm font-medium hover:text-accent-green transition duration-150">Inicio</a>
+                <a href="#" class="text-sm font-medium text-accent-green border-b-2 border-accent-green pb-1">Colección</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Cera de Soja</a>
+                <a href="#" class="text-sm font-medium hover:text-accent-green transition duration-150">Nosotros</a>
+            </nav>
+
+            <!-- Íconos de Usuario y Carrito --><div class="flex items-center space-x-4">
+                <a href="#" class="text-lg hover:text-accent-green transition duration-150" aria-label="Cuenta">
+                    <!-- Icono de Usuario (SVG Lucide) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <a href="#" class="text-lg hover:text-accent-green transition duration-150" aria-label="Carrito de compra">
+                    <!-- Icono de Carrito (SVG Lucide) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de la Colección -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+        <!-- Header de la Página de Colección -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-earthy-dark">
+                Nuestra Colección de Velas
+            </h1>
+            <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+                Encuentra tu atmósfera ideal entre nuestras fragancias artesanales. Pura cera de soja, hechas con cariño en España.
+            </p>
+        </header>
+
+        <!-- Barra de Filtros y Ordenación (Responsivo) -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-8 border-b border-gray-200 pb-4">
+            
+            <!-- Filtros (Visible en móvil como botones apilados) -->
+            <div class="flex flex-wrap gap-3 mb-4 sm:mb-0">
+                <button class="filter-button text-sm font-medium px-4 py-2 rounded-full border border-gray-300 bg-card-white hover:bg-accent-green hover:text-card-white">Todo</button>
+                <button class="filter-button text-sm font-medium px-4 py-2 rounded-full border border-gray-300 bg-card-white hover:bg-accent-green hover:text-card-white">Cítricos</button>
+                <button class="filter-button text-sm font-medium px-4 py-2 rounded-full border border-gray-300 bg-card-white hover:bg-accent-green hover:text-card-white">Amaderados</button>
+                <button class="filter-button text-sm font-medium px-4 py-2 rounded-full border border-gray-300 bg-card-white hover:bg-accent-green hover:text-card-white">Especias</button>
+            </div>
+
+            <!-- Ordenar por (Dropdown simple) -->
+            <div>
+                <label for="sort" class="text-sm font-medium text-earthy-dark mr-2 hidden sm:inline">Ordenar por:</label>
+                <select id="sort" class="text-sm font-medium py-2 px-3 border border-gray-300 rounded-lg bg-card-white focus:ring-accent-green focus:border-accent-green">
+                    <option>Novedades</option>
+                    <option>Precio: Menor a Mayor</option>
+                    <option>Precio: Mayor a Menor</option>
+                    <option>Más vendidos</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Cuadrícula de Productos (Responsiva) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Tarjeta de Producto 1: Lavanda Calmante -->
+            <a href="#" class="product-card block rounded-xl overflow-hidden bg-card-white shadow-md">
+                <!-- Placeholder de Imagen (Color de acento + Tono limpio) -->
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=LAVANDA" 
+                        alt="Vela de Lavanda Calmante" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=LAVANDA';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Lavanda Calmante</h3>
+                    <p class="text-sm text-stone-500 mb-2">Para la relajación nocturna</p>
+                    <p class="text-xl font-bold text-accent-green">24.99€</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Producto 2: Maderas de Sándalo -->
+            <a href="#" class="product-card block rounded-xl overflow-hidden bg-card-white shadow-md">
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=S%C3%81NDALO" 
+                        alt="Vela de Maderas de Sándalo" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=SÁNDALO';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Maderas de Sándalo</h3>
+                    <p class="text-sm text-stone-500 mb-2">Ambiente cálido y terroso</p>
+                    <p class="text-xl font-bold text-accent-green">26.50€</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Producto 3: Cítrico Matinal -->
+            <a href="#" class="product-card block rounded-xl overflow-hidden bg-card-white shadow-md">
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=C%C3%8DTRICO" 
+                        alt="Vela Cítrico Matinal" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=CÍTRICO';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Cítrico Matinal</h3>
+                    <p class="text-sm text-stone-500 mb-2">Para la energía y el estudio</p>
+                    <p class="text-xl font-bold text-accent-green">22.00€</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Producto 4: Vainilla Pura -->
+            <a href="#" class="product-card block rounded-xl overflow-hidden bg-card-white shadow-md">
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=VAINILLA" 
+                        alt="Vela Vainilla Pura" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=VAINILLA';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Vainilla Pura</h3>
+                    <p class="text-sm text-stone-500 mb-2">Dulce y reconfortante</p>
+                    <p class="text-xl font-bold text-accent-green">25.00€</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Producto 5: Pino y Cedro (Edición Limitada) -->
+            <a href="#" class="product-card relative block rounded-xl overflow-hidden bg-card-white shadow-md">
+                 <!-- Etiqueta de Edición Especial -->
+                <div class="absolute top-3 right-3 bg-accent-green text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+                    LIMITED
+                </div>
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=PINO" 
+                        alt="Vela Pino y Cedro" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=PINO';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Pino y Cedro</h3>
+                    <p class="text-sm text-stone-500 mb-2">Edición de Temporada</p>
+                    <p class="text-xl font-bold text-accent-green">28.99€</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Producto 6: Flores Blancas -->
+            <a href="#" class="product-card block rounded-xl overflow-hidden bg-card-white shadow-md">
+                <div class="aspect-square bg-accent-green/10 flex items-center justify-center p-4">
+                    <img 
+                        src="https://placehold.co/400x400/5F857B/FFFFFF?text=FLORES" 
+                        alt="Vela Flores Blancas" 
+                        class="w-full h-full object-cover rounded-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/5F857B/FFFFFF?text=FLORES';"
+                    >
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-earthy-dark">Flores Blancas</h3>
+                    <p class="text-sm text-stone-500 mb-2">Aromas frescos y limpios</p>
+                    <p class="text-xl font-bold text-accent-green">24.99€</p>
+                </div>
+            </a>
+            
+        </div>
+        <!-- Fin de la Cuadrícula de Productos -->
+
+        <!-- Paginación (Simple) -->
+        <div class="flex justify-center mt-12 space-x-2">
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-card-white text-dark-slate hover:bg-accent-green/20">Anterior</button>
+            <button class="px-4 py-2 border border-accent-green rounded-lg text-sm bg-accent-green text-card-white">1</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-card-white text-dark-slate hover:bg-accent-green/20">2</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-card-white text-dark-slate hover:bg-accent-green/20">Siguiente</button>
+        </div>
+
+    </main>
+
+    <!-- Footer (Mantenemos la simplicidad) -->
+    <footer class="bg-earthy-dark py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-light">
+            <p class="text-sm mb-2">© 2025 Acoa Studio. Velas Artesanales y Sostenibles.</p>
+            <div class="flex justify-center space-x-4 text-xs">
+                <a href="#" class="hover:text-accent-green">Política de Privacidad</a>
+                <span class="opacity-50">|</span>
+                <a href="#" class="hover:text-accent-green">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
