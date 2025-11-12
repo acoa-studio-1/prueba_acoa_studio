@@ -51,16 +51,21 @@
                 <a href="/prueba_acoa_studio/nosotros.html" class="text-sm font-medium text-accent-green border-b-2 border-accent-green pb-1">Nosotros</a>
             </nav>
 
-            <!-- Íconos de Usuario y Carrito (Símbolos para un e-commerce) -->
-            <!-- <div class="flex items-center space-x-4">
-                <a href="#" class="text-lg hover:text-accent-green transition duration-150" ar<ia-label="Cuenta">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </a>
-                <a href="#" class="text-lg hover:text-accent-green transition duration-150" aria-label="Carrito de compra">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                </a>
-            </div> -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 transition duration-150" aria-label="Abrir menú">
+                <!-- Icono de Hamburguesa (SVG Lucide) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
         </div>
+
+        <!-- Menú Móvil Desplegable (Oculto por defecto) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-card-white border-t border-gray-100 py-4 px-4">
+            <div class="flex flex-col space-y-3">
+                <a href="/prueba_acoa_studio/index.html" class="text-base font-medium text-earthy-dark hover:text-accent-green transition duration-150 p-2 rounded-lg">Inicio</a>
+                <a href="/prueba_acoa_studio/coleccion.html" class="text-base font-medium text-earthy-dark hover:text-accent-green transition duration-150 p-2 rounded-lg">Colección</a>
+                <a href="/prueba_acoa_studio/cera_de_soja.html" class="text-base font-medium text-accent-green border-l-4 border-accent-green pl-2">Cera de Soja</a>
+                <a href="/prueba_acoa_studio/nosotros.html" class="text-base font-medium text-earthy-dark hover:text-accent-green transition duration-150 p-2 rounded-lg">Nosotros</a>
+            </div>
+        </nav>
     </header>
 
     <!-- Sección Principal: Historia y Misión -->
